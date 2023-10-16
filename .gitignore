@@ -1,0 +1,4 @@
+.env
+*.pub
+key
+key.pub
