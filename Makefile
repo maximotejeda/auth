@@ -3,7 +3,7 @@ NAME="auth"
 OSS="linux windows darwin"
 PLATFORM="amd64 arm64"
 ACTUALOS=`uname | tr '[:upper:]' '[:lower:]'`
-ACTUALPLATFORM=`uname -r | sed 's/.*\([xXamd864_]\{5,6\}\).*/\1/g' | sed 's/.*\([arm64]\{5\}\)/\1/g'`
+ACTUALPLATFORM=`uname -a | sed 's/.*\([xXamd864_]\{5,6\}\).*/amd64/g' | sed 's/.*\([arm64]\{5\}\)/\1/g'`
 ACTUALBIN="${NAME}-${ACTUALOS}-${ACTUALPLATFORM}"
 TEMPFILES="key* *.db bin"
 
