@@ -1,9 +1,9 @@
-.PHONY: test clean build run-local run-build
+.PHONY: test clean build build-all build-image build-image-debug run-local run-build run-image run-image-debug
 NAME="auth"
 OSS="linux windows darwin"
 PLATFORM="amd64 arm64"
 ACTUALOS=`uname | tr '[:upper:]' '[:lower:]'`
-ACTUALPLATFORM=`uname -r | sed 's/\([[:digit:].]*-\)//g'`
+ACTUALPLATFORM=`uname -r | sed 's/.*\([xXamd864_]\{5,6\}\).*/\1/g' | sed 's/.*\([arm64]\{5\}\)/\1/g'`
 ACTUALBIN="${NAME}-${ACTUALOS}-${ACTUALPLATFORM}"
 TEMPFILES="key* *.db bin"
 
