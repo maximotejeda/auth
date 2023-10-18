@@ -1,0 +1,7 @@
+version: "3.8"
+service:
+  auth:
+    build: .
+    ports:
+      - "8080:8080"
+    entrypoint:  ["/bin/auth", "-addr=localhost:8080", "-timeout=10s",  "-debug=0"]
